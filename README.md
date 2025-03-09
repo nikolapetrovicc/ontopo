@@ -1,5 +1,57 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Ontopo: Restaurants Search Application
+
+
+Ova aplikacija omogućava korisnicima da pretražuju restorane na osnovu datuma, vremena i broja osoba. Izgrađena je koristeći Vue 3, TypeScript i Vite, pružajući brz i efikasan razvojni proces.
+
+## Tehnologije
+
+-   Vue 3
+-   TypeScript
+-   Vite
+-   Pinia (za upravljanje stanjem)
+-   Tailwind CSS (za stilizovanje)
+-   ApiService (za komunikaciju sa API-jem)
+
+## Podešavanje projekta
+
+1.  **Kloniranje repozitorijuma:**
+
+    ```bash
+    git clone https://github.com/nikolapetrovicc/ontopo.git
+    cd ontopo
+    ```
+
+2.  **Instalacija zavisnosti:**
+
+    ```bash
+    npm install
+    ```
+
+    ili
+
+    ```bash
+    yarn install
+    ```
+
+    ili
+
+    ```bash
+    pnpm install
+    ```
+
+3.  **Pokretanje razvojnog servera:**
+
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build za produkciju:**
+
+    ```bash
+    npm run build
+    ```
+
+## Struktura direktorijuma
