@@ -30,18 +30,6 @@ Ova aplikacija omogućava korisnicima da pretražuju restorane na osnovu datuma,
     npm install
     ```
 
-    ili
-
-    ```bash
-    yarn install
-    ```
-
-    ili
-
-    ```bash
-    pnpm install
-    ```
-
 3.  **Pokretanje razvojnog servera:**
 
     ```bash
@@ -53,5 +41,3 @@ Ova aplikacija omogućava korisnicima da pretražuju restorane na osnovu datuma,
     ```bash
     npm run build
     ```
-
-## Struktura direktorijuma
