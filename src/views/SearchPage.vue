@@ -5,7 +5,7 @@
 
         <!-- Error Message -->
         <div v-if="searchStore.error || authStore.error"
-            class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-6">
+            class="bg-red-50 border-1 border-red-600 text-red-700 p-4 md:p-8 rounded-2xl max-w-4xl mx-auto">
             {{ searchStore.error || authStore.error }}
         </div>
 

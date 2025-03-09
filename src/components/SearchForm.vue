@@ -10,7 +10,7 @@
         <div class="flex flex-col md:flex-row" ref="dropdownContainerRef">
             <div class="flex flex-col md:flex-row flex-grow mb-4 md:mb-0">
                 <!-- 1. Dropdown za broj osoba -->
-                <dropdown v-model="selectedPersons" :options="personOptions" type="persons"
+                <dropdown v-model="selectedPersons" :options="personOptions" type="persons" :max-height="true"
                     buttonClasses="border-r border-gray-300 rounded-t-lg md:rounded-tr-none md:rounded-l-lg"
                     :is-open="activeDropdown === 'persons'" @toggle="toggleDropdown('persons')"
                     ref="personsDropdownRef" />
@@ -82,20 +82,21 @@ const nextSevenDays = computed(() => {
 
 const timeSlots = computed(() => {
     const slots = [];
-    const now = new Date();
-    const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
-    const currentTime = currentHour * 60 + currentMinute;
 
     for (let hour = 8; hour <= 23; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
-            const slotTime = hour * 60 + minute;
             const slot = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-
-            if (slotTime >= currentTime) {
-                slots.push(slot);
-            }
+            slots.push(slot);
         }
+    }
+
+    if (selectedDate.value.toDateString() === new Date().toDateString()) {
+        const now = new Date();
+        const currentTime = now.getHours() * 60 + now.getMinutes();
+        return slots.filter(slot => {
+            const [hour, minute] = slot.split(':').map(Number);
+            return hour * 60 + minute >= currentTime;
+        });
     }
 
     return slots;

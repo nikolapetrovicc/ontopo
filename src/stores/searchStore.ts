@@ -121,7 +121,7 @@ export const useSearchStore = defineStore("search", () => {
             const response = await apiService.searchRequest(authStore.jwtToken, searchId.value);
 
             if (response.posts && response.posts.length > 0) {
-                restaurants.value = [...restaurants.value, ...response.posts];
+                restaurants.value.push(...response.posts);
             }
             totalResults.value = response.total;
 

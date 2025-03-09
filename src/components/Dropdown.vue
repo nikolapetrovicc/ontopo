@@ -8,13 +8,16 @@
         <!-- Dropdown content -->
         <div v-if="isOpen" class="absolute z-10 w-full bg-white border border-gray-200 rounded-lg shadow-lg mt-1"
             :class="{ 'max-h-60 overflow-y-auto': maxHeight }">
-            <ul>
+            <ul v-if="options.length > 0">
                 <li v-for="(option, index) in options" :key="`option-${index}`" @click="selectOption(option)"
                     class="p-4 hover:bg-gray-100 cursor-pointer border-b border-gray-100 last:border-b-0"
                     :class="{ 'bg-gray-200': isOptionSelected(option) }">
                     {{ formatOptionText(option) }}
                 </li>
             </ul>
+            <div v-else class="p-4 border-b border-gray-100">
+                Nema dostupnih opcija
+            </div>
         </div>
     </div>
 </template>
