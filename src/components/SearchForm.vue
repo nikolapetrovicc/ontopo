@@ -16,7 +16,7 @@
                     ref="personsDropdownRef" />
 
                 <!-- 2. Dropdown za datume -->
-                <dropdown v-model="selectedDate" :options="nextSevenDays" type="date"
+                <dropdown v-model="selectedDate" :options="nextSevenDays" type="date" :max-height="true"
                     buttonClasses="border-r border-gray-300 md:rounded-none" :is-open="activeDropdown === 'date'"
                     @toggle="toggleDropdown('date')" ref="dateDropdownRef" />
 
